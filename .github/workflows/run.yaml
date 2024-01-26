@@ -1,0 +1,26 @@
+name: Run Schedule for GitHub Issues to Notion Sync
+
+on:
+    push:
+        branches: ["main"]
+    schedule:
+        - cron: "0 7 * * *"
+
+permissions:
+    contents: read
+
+env:
+    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+    NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: oven-sh/setup-bun@v1
+              with:
+                  bun-version: latest
+            - name: Run GitHub Issues to Notion Sync
+              run: bun start
