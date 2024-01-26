@@ -106,6 +106,7 @@ async function main() {
 	}
 
 	for (const issue of issues) {
+		console.log(issue.html_url)
 		const query = await notion.databases.query({
 			database_id: process.env.NOTION_DATABASE_ID!,
 			filter: {
@@ -136,7 +137,7 @@ async function main() {
 			},
 			Repo: {
 				select: {
-					name: issue.repo
+					name: issue.repo,
 				},
 			},
 			'Issue Id': {
@@ -195,6 +196,12 @@ async function main() {
 			await notion.pages.update({
 				page_id: query.results[0].id,
 				properties: properties,
+				icon: {
+					type: 'external',
+					external: {
+						url: 'https://www.notion.so/icons/git_orange.svg',
+					},
+				},
 			})
 		} else {
 			await notion.pages.create({
@@ -202,6 +209,12 @@ async function main() {
 					database_id: process.env.NOTION_DATABASE_ID!,
 				},
 				properties: properties,
+				icon: {
+					type: 'external',
+					external: {
+						url: 'https://www.notion.so/icons/git_orange.svg',
+					},
+				},
 			})
 		}
 	}
