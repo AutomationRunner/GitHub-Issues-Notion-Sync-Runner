@@ -12,10 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.14",
-    "octokit": "^3.1.2"
+    "@notionhq/client": "^2.2.15",
+    "octokit": "^4.0.2"
   }
 }

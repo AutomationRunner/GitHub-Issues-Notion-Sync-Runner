@@ -10,7 +10,7 @@ permissions:
     contents: read
 
 env:
-    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
     NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
