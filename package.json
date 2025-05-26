@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
-    "octokit": "^4.0.2"
+    "octokit": "^5.0.2"
   }
 }
