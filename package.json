@@ -15,7 +15,7 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.15",
+    "@notionhq/client": "^5.14.0",
     "octokit": "^4.0.2"
   }
 }
